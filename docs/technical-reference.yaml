@@ -1,0 +1,57 @@
+---
+swagger: "2.0"
+info:
+  description: "This API is used to _________"
+  version: "1.0.0"
+  title: "CSCI 602 REST API"
+  contact:
+    name: "John Ravan"
+    url: "https://theravans.com/"
+    email: "ravanj1@citadel.edu"
+  license:
+    name: "MIT License"
+    url: "https://www.mit.edu/"
+host: "localhost:5000"
+basePath: "/"
+tags:
+- name: "status-endpoints"
+  description: "Status Endpoints"
+paths:
+  /health:
+    get:
+      tags:
+      - "status-endpoints"
+      summary: "health"
+      operationId: "healthUsingGET"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "string"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /info:
+    get:
+      tags:
+      - "status-endpoints"
+      summary: "info"
+      operationId: "infoUsingGET"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "string"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
