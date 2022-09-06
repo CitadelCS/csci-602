@@ -13,8 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Endpoint for determining the status and API information. These endpoints are not included
- * within the FHIR Swagger
+ * Endpoint for determining the status and API information.
  */
 @RestController
 @RequestMapping("/")
