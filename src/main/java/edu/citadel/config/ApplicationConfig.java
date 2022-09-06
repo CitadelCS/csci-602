@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Application config that serves up the configuration for the FHIR Validator
+ * Application config that serves up the configuration
  */
 @Configuration
 public class ApplicationConfig {

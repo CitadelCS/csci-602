@@ -1,11 +1,11 @@
-package edu.citadel.fhirvalidator;
+package edu.citadel.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * Spring boot entry point for the FHIR Validator API Application
+ * Spring boot entry point for the API Application
  */
 @ComponentScan(value = {"edu.citadel"})
 @SpringBootApplication

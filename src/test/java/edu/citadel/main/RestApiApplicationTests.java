@@ -1,4 +1,4 @@
-package edu.citadel.fhirvalidator;
+package edu.citadel.main;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
