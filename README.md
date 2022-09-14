@@ -26,7 +26,9 @@ https://classroom.github.com/a/{classroomId}
 git clone git@git.github.com:CitadelCS/csci-602-fall-2021-{yourUsername}.git
 ```
 
-5.) Build the project
+5.) Build the project 
+
+> Disclaimer: If running on a Windows machine replace `./mvnw` with `mvnw.cmd`
 
 ```bash
 ./mvnw clean install
@@ -40,7 +42,7 @@ You should see a success if everything is set up correctly.
 ./mvnw spring-boot:run
 ```
 
-Access the API by visiting [http://localhost:5000/swagger-ui/index.html](http://localhost:5000/swagger-ui/index.html). From there you can hit the endpoints directly.
+Access the API by visiting [http://localhost:5001/swagger-ui/index.html](http://localhost:5001/swagger-ui/index.html). From there you can hit the endpoints directly.
 
 7.) Success!
 
