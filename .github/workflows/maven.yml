@@ -36,6 +36,6 @@ jobs:
           java-version: 11
           distribution: corretto
       - name: Build with Maven
-        run: ./mvnw -B compile --file pom.xml
+        run: ./mvnw -B compile --file pom.xml -Dactive.profile=ghci
       - name: Test with Maven
-        run: ./mvnw -B test --file pom.xml
+        run: ./mvnw -B test --file pom.xml -Dactive.profile=ghci
