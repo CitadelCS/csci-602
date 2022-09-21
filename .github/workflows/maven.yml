@@ -13,7 +13,7 @@ jobs:
       # Label used to access the service container
       postgres:
         # Docker Hub image
-        image: postgres:9.6
+        image: postgres:14.0
         # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: admin
@@ -36,6 +36,6 @@ jobs:
           java-version: 11
           distribution: corretto
       - name: Build with Maven
-        run: ./mvnw -B compile --file pom.xml
+        run: ./mvnw -B compile --file pom.xml -Dspring.profiles.active=ghci
       - name: Test with Maven
-        run: ./mvnw -B test --file pom.xml
+        run: ./mvnw -B test --file pom.xml -Dspring.profiles.active=ghci
