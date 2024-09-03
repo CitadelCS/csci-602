@@ -5,7 +5,7 @@
 
 ## Environment Setup (Students)
 
-1.) Install Java JDK 11+. JDK located [here](https://openjdk.java.net/install/). If you have a Mac you can use `brew`.
+1.) Install Java JDK 17+. JDK located [here](https://openjdk.java.net/install/). If you have a Mac you can use `brew`.
 
 ```bash
 brew install java
