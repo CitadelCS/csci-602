@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.3</version>
+        <version>3.3.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -17,18 +17,24 @@
     <description>Template repository for CSCI 602</description>
 
     <properties>
-        <java.version>11</java.version>
-        <spring.doc.version>1.6.11</spring.doc.version>
-        <apache.commons.lang3.version>3.12.0</apache.commons.lang3.version>
-        <commons.io.version>2.11.0</commons.io.version>
-        <jackson.version>2.13.4</jackson.version>
-        <lombok.version>1.18.24</lombok.version>
-        <twilio.version>8.36.0</twilio.version>
-        <flyway.version>9.3.1</flyway.version>
-        <postgres.version>42.5.0</postgres.version>
+        <java.version>17</java.version>
+        <spring.doc.version>1.7.0</spring.doc.version>
+        <apache.commons.lang3.version>3.16.0</apache.commons.lang3.version>
+        <commons.io.version>2.16.1</commons.io.version>
+        <jackson.version>2.17.2</jackson.version>
+        <lombok.version>1.18.32</lombok.version>
+        <twilio.version>10.4.1</twilio.version>
+        <flyway.version>10.17.1</flyway.version>
+        <postgres.version>42.7.3</postgres.version>
+        <hibernate.core>6.5.2.Final</hibernate.core>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.core}</version>
+        </dependency>
         <dependency>
             <groupId>com.twilio.sdk</groupId>
             <artifactId>twilio</artifactId>
@@ -38,6 +44,12 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>${flyway.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+            <version>${flyway.version}</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
