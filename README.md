@@ -46,6 +46,13 @@ Access the API by visiting [http://localhost:5001/swagger-ui/index.html](http://
 
 7.) Success!
 
+## Setting Up DataSource
+
+Setting up the datasource within IntelliJ should be straightforward with username and password. If you're using a
+Heroku datasource then you will need to set the following settings on the Advanced tab
+
+![Datasource](./images/datasource_settings.png)
+
 ## Resources
 
 ### Spring Boot
