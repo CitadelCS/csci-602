@@ -5,11 +5,13 @@
 
 ## Environment Setup (Students)
 
-1.) Install Java JDK 17+. JDK located [here](https://openjdk.java.net/install/). If you have a Mac you can use `brew`.
+1.) Install Java JDK 17+. JDK located [here](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html). If you have a Mac you can use `brew`.
 
 ```bash
-brew install java
+brew install --cask corretto@17
 ```
+
+If you're on Windows, download the `.msi` installer from [here](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) and run.
 
 2.) Create your personal repository from Github. You should receive a unique link from your professor from Github Classroom that will generate a private repository within your Github account.
 It should look something like this.
@@ -28,7 +30,7 @@ git clone git@git.github.com:CitadelCS/csci-602-fall-2021-{yourUsername}.git
 
 5.) Build the project 
 
-> Disclaimer: If running on a Windows machine replace `./mvnw` with `mvnw.cmd`
+> Disclaimer: If running on a Windows machine replace `./mvnw` with `.\mvnw`
 
 ```bash
 ./mvnw clean install
