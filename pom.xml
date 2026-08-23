@@ -22,7 +22,7 @@
         <apache.commons.lang3.version>3.20.0</apache.commons.lang3.version>
         <commons.io.version>2.18.0</commons.io.version>
         <lombok.version>1.18.38</lombok.version>
-        <flyway.version>11.8.2</flyway.version>
+        <flyway.version>13.3.0</flyway.version>
         <postgres.version>42.7.7</postgres.version>
     </properties>
 
