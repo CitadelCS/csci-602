@@ -48,7 +48,7 @@ public class AccountEndpoints {
     if (rtnAccount != null) {
       return new ResponseEntity<>(rtnAccount, HttpStatus.OK);
     } else {
-      return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
   }
 
@@ -59,7 +59,7 @@ public class AccountEndpoints {
     if (rtnAccount != null) {
       return new ResponseEntity<>(rtnAccount, HttpStatus.OK);
     } else {
-      return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
   }
 
