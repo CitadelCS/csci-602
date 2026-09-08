@@ -3,21 +3,21 @@
 [![Java CI](https://github.com/CitadelCS/csci-602/actions/workflows/maven.yml/badge.svg)](https://github.com/CitadelCS/csci-602/actions/workflows/maven.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Template repository for CSCI 602 semester projects. Students receive their own copy via GitHub Classroom.
+Template repository for CSCI 602 semester projects at The Citadel.
 
 ## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| Backend | Java 25, Spring Boot 3.5, Spring Security (JWT) |
+| Backend | Java 25, Spring Boot 4.1 |
 | Frontend | React (Vite) |
 | Database | PostgreSQL (Flyway migrations) |
-| Testing | JUnit 5, Cucumber (BDD) |
+| Testing | JUnit 5, Cucumber (BDD), JaCoCo (coverage) |
 | CI/CD | GitHub Actions |
 | Deployment | Render (Static Site + Web Service + PostgreSQL) |
-| API Docs | SpringDoc OpenAPI (Swagger UI) |
+| API Docs | SpringDoc OpenAPI 3 (Swagger UI) |
 
-## Environment Setup
+## Getting Started
 
 ### Prerequisites
 
@@ -30,19 +30,19 @@ Template repository for CSCI 602 semester projects. Students receive their own c
 
 ### 1. Create Your Repository
 
-You will receive a GitHub Classroom link from your professor:
-
-```
-https://classroom.github.com/a/{classroomId}
-```
-
-This creates a private repository under the [CitadelCS](https://github.com/CitadelCS) organization.
+1. Go to the template repository: [CitadelCS/csci-602](https://github.com/CitadelCS/csci-602)
+2. Click the green **"Use this template"** button → **"Create a new repository"**
+3. Set the **Owner** to your personal GitHub account
+4. Name the repository `csci-602` (or any name you prefer)
+5. Set visibility to **Private**
+6. Click **"Create repository"**
+7. Go to **Settings → Collaborators** and add `jtravan3` as a collaborator
 
 ### 2. Clone and Build
 
 ```bash
-git clone git@github.com:CitadelCS/csci-602-fall-2026-{yourUsername}.git
-cd csci-602-fall-2026-{yourUsername}
+git clone https://github.com/YOUR-USERNAME/csci-602.git
+cd csci-602
 ```
 
 > On Windows, replace `./mvnw` with `.\mvnw` in all commands below.
@@ -53,7 +53,7 @@ cd csci-602-fall-2026-{yourUsername}
 
 ### 3. Configure Your Database
 
-Update `src/main/resources/application.yaml` with your database credentials:
+Update `src/main/resources/application.yaml` with the database credentials provided by your instructor:
 
 ```yaml
 spring:
@@ -62,6 +62,8 @@ spring:
     username: {username}
     password: {password}
 ```
+
+> **⚠️ Do not commit your database credentials to your repository.** Edit `application.yaml` locally but make sure you do not push these changes. Your credentials are unique to you.
 
 ### 4. Run the API
 
@@ -77,28 +79,32 @@ The API starts on port 5001. Access Swagger UI at [http://localhost:5001/swagger
 ./mvnw test
 ```
 
-This runs both JUnit unit tests and Cucumber integration tests.
+This runs JUnit unit tests and Cucumber integration tests. JaCoCo coverage reports are generated at `target/site/jacoco/index.html`.
 
-### 6. Frontend Setup (after Iteration 0)
+### 6. Frontend Setup (Iteration 0)
+
+See `frontend/README.md` for instructions on scaffolding the React (Vite) frontend.
 
 ```bash
 cd frontend
+npm create vite@latest . -- --template react-ts
 npm install
 npm run dev
 ```
 
-The React dev server starts on [http://localhost:5173](http://localhost:5173) and proxies API requests to the Spring Boot backend.
+The React dev server starts on [http://localhost:5173](http://localhost:5173).
 
 ## Project Structure
 
 ```
 ├── .github/workflows/     # GitHub Actions CI pipeline
-├── frontend/              # React (Vite) frontend (created in Iteration 0)
+├── frontend/              # React (Vite) frontend (scaffold in Iteration 0)
+├── render.yaml            # Render deployment blueprint
 ├── src/
 │   ├── main/
 │   │   ├── java/edu/citadel/
 │   │   │   ├── api/           # REST controllers
-│   │   │   ├── config/        # Spring configuration
+│   │   │   ├── config/        # Spring configuration (SecurityConfig stub)
 │   │   │   ├── dal/           # Data access layer (repositories, models)
 │   │   │   └── main/          # Application entry point
 │   │   └── resources/
@@ -114,12 +120,23 @@ The React dev server starts on [http://localhost:5173](http://localhost:5173) an
 └── README.md
 ```
 
+## Stub Files
+
+The following files are included as starting points for specific assignments:
+
+| File | Assignment |
+|---|---|
+| `src/main/java/edu/citadel/config/SecurityConfig.java` | Iteration 1 — JWT Authentication |
+| `src/test/java/edu/citadel/bdd/StepDefinitions.java` | Iteration 1 — Cucumber Integration Tests |
+| `frontend/README.md` | Iteration 0 — React Frontend Scaffold |
+| `render.yaml` | Iteration 2 — Render Deployment |
+
 ## Useful Commands
 
 | Command | Description |
 |---|---|
 | `./mvnw compile` | Compile the project |
-| `./mvnw test` | Run all tests (JUnit + Cucumber) |
+| `./mvnw test` | Run all tests (JUnit + Cucumber) + generate coverage |
 | `./mvnw spring-boot:run` | Start the API locally |
 | `./mvnw clean install` | Full build + test |
 
@@ -131,4 +148,4 @@ The React dev server starts on [http://localhost:5173](http://localhost:5173) an
 - [React — Getting Started with Vite](https://vitejs.dev/guide/)
 - [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
 - [Render — Deployment Docs](https://render.com/docs)
-
+- [JaCoCo — Code Coverage](https://www.jacoco.org/jacoco/trunk/doc/)
